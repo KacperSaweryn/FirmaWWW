@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Strona>
+
+<h5 class="white-text">Informacje Dodatkowe</h5>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item.LinkTytul, "Index", "Home", new {id=item.IdStrony},null)</li>
+    
+    }
+</ul>
+
+@* <li>@Html.ActionLink("Prywatność", "Privacy", "Home")</li> *@
+

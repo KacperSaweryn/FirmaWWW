@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Starter Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    @await Html.PartialAsync("Odnosniki", (IEnumerable<Firma.Data.Data.CMS.Strona>)ViewBag.ModelStrony)
+</nav>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        @RenderBody()
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        @await Html.PartialAsync("Aktualnosci", (IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)
+    </div>
+</div>
+
+<footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                @await Html.PartialAsync("Parametry", (IEnumerable<Firma.Data.Data.CMS.Parametr>)ViewBag.ModelParametry)
+
+
+            </div>
+            <div class="col l3 s12">
+                @await Html.PartialAsync("InformacjeDodatkowe", (IEnumerable<Firma.Data.Data.CMS.Strona>)ViewBag.ModelInformacjeDodatkowe)
+            </div>
+            <div class="col l3 s12">
+                @await Html.PartialAsync("Kontakt", (IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelKontakt)
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Kacper</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../../bin/materialize.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>

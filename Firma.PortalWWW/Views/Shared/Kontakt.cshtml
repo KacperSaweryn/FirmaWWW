@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Aktualnosc>
+
+<h5 class="white-text">Connect</h5>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item.LinkTytul, "Index", "Aktualnosc", new {id=item.IdAktualnosci},null)</li>
+    }
+</ul>
+
